@@ -11,28 +11,15 @@ permissions:
 
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
+      - uses: actions/checkout@v2
         with:
-          java-version: '17'
-          distribution: 'temurin'
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
-        with:
-          arguments: build
-      - name: Build
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v2
-            with:
-              fetch-depth: 0
-          - uses: docker://sonarsource/sonar-scanner-cli:latest
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              SONAR_TOKEN: sqp_91a4959142dc794f6df56994f458d0d6093af801
-              SONAR_HOST_URL: http://localhost:9090
+          fetch-depth: 0
+      - uses: docker://sonarsource/sonar-scanner-cli:latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: sqp_91a4959142dc794f6df56994f458d0d6093af801
+          SONAR_HOST_URL: http://localhost:9090
+
