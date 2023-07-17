@@ -31,5 +31,5 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Sonar Qube Analyses
-      run: ./gradlew sonarqube
+      run: ./gradlew sonar
 
