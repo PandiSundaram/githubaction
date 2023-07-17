@@ -22,7 +22,7 @@ class DemoApplicationTests {
 		obj.add("Emma");
 		obj.add("Ronan");
 		obj.add("Antonio");
-		assertEquals("Checking size of List", 3, obj.size());
+		assertEquals("Checking size of List", 2, obj.size());
 	}
 
 
