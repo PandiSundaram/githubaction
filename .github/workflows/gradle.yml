@@ -30,6 +30,29 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Sonar Qube Analyses
-      run: ./gradlew sonar
+    - name: Build
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+            with:
+              fetch-depth: 0
+          - uses: docker://sonarsource/sonar-scanner-cli:latest
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              SONAR_TOKEN: sqp_91a4959142dc794f6df56994f458d0d6093af801
+              SONAR_HOST_URL: http://localhost:9090
 
+#      jobs:
+#        build:
+#          name: Build
+#          runs-on: ubuntu-latest
+#          steps:
+#            - uses: actions/checkout@v2
+#              with:
+#                fetch-depth: 0
+#            - uses: docker://sonarsource/sonar-scanner-cli:latest
+#              env:
+#                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#                SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+#
