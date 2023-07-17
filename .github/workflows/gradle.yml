@@ -30,4 +30,6 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Sonar Qube Analyses
+      run: ./gradlew sonarqube
 
