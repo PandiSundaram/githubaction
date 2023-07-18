@@ -43,6 +43,10 @@ sonar {
 		property 'sonar.host.url', 'https://sonar.anywhere.co'
 		property 'sonar.login', '779f0a933f16fd75121fc5a405d66a24f7a2412a'
 		property 'sonar.projectKey', 'testproject'
+		property 'sonar.sources', 'src/main/java'
+		property 'sonar.language', 'java'
+		property 'sonar.java.binaries', '**/target/classes'
+	
 
 	}
 }
