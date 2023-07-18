@@ -40,9 +40,9 @@ tasks.named('test') {
 
 sonar {
 	properties {
-		property 'sonar.host.url', 'http://localhost:9000'
-		property 'sonar.login', 'admin'
-		property 'sonar.password', 'admin123'
+		property 'sonar.host.url', 'https://sonar.anywhere.co'
+		property 'sonar.login', '779f0a933f16fd75121fc5a405d66a24f7a2412a'
+		property 'sonar.projectKey', 'testproject'
 
 	}
 }
