@@ -45,7 +45,7 @@ sonar {
 		property 'sonar.projectKey', 'testproject'
 		property 'sonar.language', 'java'
 		property 'sonar.java.binaries', '**/target/classes'
-		property "sonar.sources", "src/main/java,src/main/webapp" 
+		property "sonar.sources", "src/main/java,src/main/webapp"
 	}
 }
 

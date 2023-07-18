@@ -16,7 +16,9 @@ jobs:
       - name: checking out
         uses: actions/checkout@master
         with:
-          arguments: build
+          java-version: 17
+      - name: gradle build
+        run: ./gradlew build
   sonarqube:
     name: SonarQube Trigger
     runs-on: ubuntu-latest
