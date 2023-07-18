@@ -13,10 +13,10 @@ jobs:
     name: build project
     runs-on: ubuntu-latest
     steps:
-      -name: checking out
-       uses: actions/checkout@master
-       with:
-         arguments: build
+      - name: checking out
+        uses: actions/checkout@master
+        with:
+          arguments: build
   sonarqube:
     name: SonarQube Trigger
     runs-on: ubuntu-latest
