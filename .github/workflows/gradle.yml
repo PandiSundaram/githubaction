@@ -39,6 +39,22 @@ jobs:
     name: SonarQube Trigger
     runs-on: ubuntu-latest
     steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: buildFile
+          path: buildFile
+
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: buildFile
+
+      - name: copy downloaded files to build folder
+        run: |
+          cp -R buildFile build
+      - name: Display structure of build
+        run: ls -R
+        working-directory: build
       - name: Checking out
         uses: actions/checkout@master
         with:
