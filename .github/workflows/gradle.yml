@@ -47,21 +47,21 @@ jobs:
           name: buildFile
           path: '**/build/'
 
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: buildFile
+#      - name: Display structure of downloaded files
+#        run: ls -R
+#        working-directory: buildFile
 
-      - name: copy downloaded files to build folder
-        run: |
-          cp -R buildFile build
-      - name: Display structure of build
-        run: ls -R
-        working-directory: build
-      - name: Checking out
-        uses: actions/checkout@master
-        with:
-          # Disabling shallow clone is recommended for improving relevancy of reporting
-          fetch-depth: 0
+#      - name: copy downloaded files to build folder
+#        run: |
+#          cp -R buildFile build
+#      - name: Display structure of build
+#        run: ls -R
+#        working-directory: build
+#      - name: Checking out
+#        uses: actions/checkout@master
+#        with:
+#          # Disabling shallow clone is recommended for improving relevancy of reporting
+#          fetch-depth: 0
       - name: SonarQube Scan
         uses: kitabisa/sonarqube-action@v1.2.0
         with:
