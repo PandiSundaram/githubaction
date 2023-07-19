@@ -33,18 +33,20 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+
+sonar {
+	properties {
+		property 'sonar.host.url', 'https://940a-117-205-119-41.ngrok-free.app'
+		property 'sonar.login', 'sqp_1d8695d7a9b1e7cb85d94aa8cd37420627ab976f'
+		property 'sonar.projectKey', 'myproject'
+	}
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
 
 
-sonar {
-	properties {
-		property 'sonar.host.url', 'https://sonar.anywhere.co'
-		property 'sonar.login', '779f0a933f16fd75121fc5a405d66a24f7a2412a'
-		property 'sonar.projectKey', 'testproject'
-	}
-}
 
 tasks.named('sonar').configure {
 	dependsOn test
