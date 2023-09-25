@@ -32,6 +32,6 @@ jobs:
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: sqp_1d8695d7a9b1e7cb85d94aa8cd37420627ab976f
-          SONAR_HOST_URL: https://940a-117-205-119-41.ngrok-free.app
+          SONAR_TOKEN: sqa_2c2d8f311d43a5bd8dc2201f859fb8a828fc1ddd
+          SONAR_HOST_URL: https://8ac5-59-89-198-61.ngrok-free.app/
         run: ./gradlew build sonar --info
