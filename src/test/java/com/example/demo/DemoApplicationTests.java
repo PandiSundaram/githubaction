@@ -18,6 +18,7 @@ class DemoApplicationTests {
 
 	@Test
 	public void testSize() {
+		System.out.println("test cases running");
 		List<String> obj = new ArrayList<>();
 		obj.add("Emma");
 		obj.add("Ronan");
